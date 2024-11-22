@@ -1,0 +1,56 @@
+// Variáveis
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family-base: Arial, sans-serif;
+
+// Estilos globais
+body {
+    font-family: $font-family-base;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: $primary-color;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.clean-energy-types {
+    @include grid-layout(3, auto);
+    padding: 2rem 0;
+
+    .card {
+        margin-bottom: 2rem;
+        @include grid-column-span(1);
+    }
+}
+
+.benefits, .contact {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer {
+    padding: 1rem 0;
+    background-color: $secondary-color;
+    color: #fff;
+}
+
+// Mixins
+@mixin grid-layout($columns, $rows) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: $rows;
+    gap: 1rem;
+}
+
+@mixin grid-column-span($span) {
+    grid-column: span $span;
+}
